@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> VR Bowling</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="./js/bowling.js"></script>
+
+</head>
+
+<body>
+  <a-scene id="scene">
+
+    <a-asset-item id="pin" src="./models/pin.glb">
+    </a-asset-item>
+    <a-asset-item id="wood" src="./models/wood.jpg">
+    </a-asset-item>
+    <a-asset-item id="marble" src="./models/marble.jpg">
+    </a-asset-item>
+    </a-assets>
+
+    <a-entity light="type: ambient; color: white; intensity:0.7"></a-entity>
+
+    <a-entity id="camera" camera position="0 5 3" wasd-controls look-controls="pointerLockEnabled: false">
+      <a-cursor></a-cursor>
+    </a-entity>
+
+    <a-entity ball></a-entity>
+
+    <a-plane id="ground" position="0 1 0" rotation="-90 0 0" height="200" width="200" color="#32CD32"
+      static-body visible="true" opacity="0.5">
+    </a-plane>
+
+    <a-entity id="pin" gltf-model="#pin" position="-2 1.5 -10" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin2" gltf-model="#pin" position="-1 1.5 -10" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin3" gltf-model="#pin" position="0 1.5 -10" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin4" gltf-model="#pin" position="1 1.5 -10" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin5" gltf-model="#pin" position="2 1.5 -10" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin6" gltf-model="#pin" position="-1 1.5 -8" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin7" gltf-model="#pin" position="0 1.5 -8" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin8" gltf-model="#pin" position="1 1.5 -8" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin9" gltf-model="#pin" position="-0.5 1.5 -6" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+    <a-entity id="pin10" gltf-model="#pin" position="0.5 1.5 -6" rotation="-90 -90 0" scale="0.05 0.05 0.05"></a-entity>
+
+    <a-plane position="0 1.02 -7" rotation="-90 0 0" width="6" height="16" src="#wood"></a-plane>
+    
+    <a-box position="-3 3 -5" width="1" height="1" depth="15" src="#marble"></a-box>
+    <a-box position="3 3 -5" width="1" height="1" depth="15"  src="#marble"></a-box>
+
+  </a-scene>
+</body>
+
+</html>
